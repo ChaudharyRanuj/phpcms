@@ -13,10 +13,8 @@ if (isset($_POST['login'])) {
  
  $user_login_query = "SELECT * FROM users WHERE user_email='$user_email_login' AND user_password='$user_password_login' ";
  $user_login_query_fetch = mysqli_query($connection,  $user_login_query);
- $user_available = mysqli_num_rows($user_login_query_fetch);
  $user_login_row = mysqli_fetch_assoc($user_login_query_fetch);
 
- if ( $user_available !== 0) {
  $user_email =  $user_login_row['user_email'];
  $user_password =  $user_login_row['user_password'];
  $user_firstname =  $user_login_row['user_firstname'];
@@ -40,13 +38,15 @@ header( "Location: admin/" );
 $_SESSION['Subscriber'] = $user_status;
 header( "Location: admin/" );
 }
- 
-} }
- else {
-    $login_failed = "Login failed. Username or Password don't match";
-    $_SESSION["failed"] = $login_failed ;
-    echo $_SESSION["failed"]; }
+
+} else {
+
+$login_failed = "Login failed. Username or Password don't match";
+$_SESSION["failed"] = $login_failed ;
+
 }
+}
+
 ?>
     <div class="row">
         <!-- Blog Entries Column -->

@@ -50,8 +50,7 @@ body {
 
 .top-nav>li {
     display: inline-block;
-    color: #f2ebebcf;
-    font-weight: bold;
+    float: left;
 }
 
 .top-nav>li>a {

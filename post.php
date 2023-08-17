@@ -93,7 +93,7 @@
                 $comment_email = $_POST['comment_email'];
                 $comment_content = $_POST['comment_content'];
                 $comment_author = $_SESSION['user_firstname'];
-                $comment_date = '17/08/2023';
+                $comment_date = CURRENT_DATE();
                 $comment_status = 'Unapproved';
                 $query_insert_comment = "INSERT INTO comments (comment_post_id, comment_title, comment_email, comment_content, comment_author, comment_date, comment_status) VALUES ('$comment_post_id', '$comment_title', '$comment_email', '$comment_content','$comment_author', '$comment_date', '$comment_status')";    
                 $query_comment_conn = mysqli_query($connection, $query_insert_comment);

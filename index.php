@@ -68,18 +68,16 @@
   echo  "<li><a class='pageLinks'  href='index.php?page=$i' target='_self'>$i</a></li>";
  } 
 
- if (isset($_GET['page'])) {
  $pageNo = $_GET['page'] - 1;
-    echo "<script> 
-    const pageLink = document.querySelector('.pager').querySelectorAll('a');
-    const arrLike = Array.from(pageLink)
-    arrLike[$pageNo].classList.add('pageNo');
-    </script>";
- }
+echo "<script> 
+const pageLink = document.querySelector('.pager').querySelectorAll('a');
+const arrLike = Array.from(pageLink)
+arrLike[$pageNo].classList.add('pageNo');
+</script>";
 ?>
 
 <script> 
-
+console.log();
 
 
 
